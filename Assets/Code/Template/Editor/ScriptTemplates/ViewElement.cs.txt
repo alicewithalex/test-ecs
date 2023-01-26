@@ -1,0 +1,11 @@
+using Leopotam.Ecs;
+using UnityEngine;
+using alicewithalex;
+
+namespace #NAMESPACE
+{
+    public class #SCRIPTNAME : ViewElement
+    {
+        
+    }
+}

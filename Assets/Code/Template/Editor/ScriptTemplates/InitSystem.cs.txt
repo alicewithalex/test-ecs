@@ -1,0 +1,13 @@
+using Leopotam.Ecs;
+using UnityEngine;
+
+namespace #NAMESPACE
+{
+    public class #SCRIPTNAME : IEcsInitSystem
+    {
+        public void Init()
+        {
+            
+        }
+    }
+}

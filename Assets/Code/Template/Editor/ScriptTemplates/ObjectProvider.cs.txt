@@ -1,0 +1,22 @@
+using alicewithalex;
+using Leopotam.Ecs;
+using UnityEngine;
+
+namespace #NAMESPACE
+{
+    [CreateAssetMenu(menuName = "#PATH/Providers/#SCRIPTNAME",
+         fileName = "#SCRIPTNAME")]
+    public class #SCRIPTNAME : ObjectSystemsProvider
+    {
+        public override EcsSystems GetSystems(EcsSystems current,
+            EcsSystems endFrame, IEcsWorldHandler ecsWorldHandler)
+        {
+            EcsSystems systems = ecsWorldHandler.CreateSystems(
+                    $"{GetType().Name} Provider");
+
+
+
+            return systems;
+        }
+    }
+}

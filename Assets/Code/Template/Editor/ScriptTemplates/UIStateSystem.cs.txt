@@ -1,0 +1,24 @@
+using alicewithalex;
+using UnityEngine;
+
+namespace #NAMESPACE
+{
+    public class #SCRIPTNAME : UIStateSystem<DefaultState, DefaultUIScreen>
+    {
+        protected override LayerType LayerType => LayerType.None;
+
+        protected override void OnStateEnter()
+        {
+            base.OnStateEnter();
+
+            Screen.Show();
+        }
+
+        protected override void OnStateExit()
+        {
+            base.OnStateExit();
+
+            Screen.Hide();
+        }
+    }
+}

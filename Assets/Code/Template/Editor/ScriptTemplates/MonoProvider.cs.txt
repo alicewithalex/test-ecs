@@ -1,0 +1,19 @@
+using alicewithalex;
+using Leopotam.Ecs;
+
+namespace #NAMESPACE
+{
+    public class #SCRIPTNAME : SystemsProvider
+    {
+        public override EcsSystems GetSystems(EcsSystems current, 
+            EcsSystems endFrame, IEcsWorldHandler ecsWorldHandler)
+        {
+            EcsSystems systems = ecsWorldHandler.CreateSystems(
+                    $"{GetType().Name} Provider");
+
+
+
+            return systems;
+        }
+    }
+}

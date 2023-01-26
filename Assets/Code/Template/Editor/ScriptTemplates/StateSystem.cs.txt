@@ -1,0 +1,23 @@
+using Leopotam.Ecs;
+using UnityEngine;
+using alicewithalex;
+
+namespace #NAMESPACE
+{
+    public class #SCRIPTNAME : StateSystem<DefaultState>
+    {
+     
+        protected override void OnStateEnter()
+        {
+            base.OnStateEnter();
+
+        }
+
+        protected override void OnStateUpdate()
+        {
+            base.OnStateUpdate();
+
+        }
+
+    }
+}

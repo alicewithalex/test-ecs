@@ -1,0 +1,14 @@
+using alicewithalex;
+using UnityEngine;
+
+namespace #NAMESPACE
+{
+    public class #SCRIPTNAME : MonoBinding
+    {
+
+        public override void Bind(IContainer container)
+        {
+
+        }
+    }
+}

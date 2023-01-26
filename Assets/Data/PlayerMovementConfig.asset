@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0150cf8d362d0ee4da42b9372a49446b, type: 3}
+  m_Name: PlayerMovementConfig
+  m_EditorClassIdentifier: 
+  MovementSpeed: 12
+  RotationSpeed: 30
+  WeaponRotationSpeed: 10
+  Gravity: 15
+  GroundDistance: 0.58
+  JumpForce: 8
+  DashForce: 100
+  DashDuration: 0.1
+  JumpKey: 32
+  DashKey: 304

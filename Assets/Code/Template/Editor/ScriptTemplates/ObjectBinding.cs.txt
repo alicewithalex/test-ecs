@@ -1,0 +1,15 @@
+using alicewithalex;
+using UnityEngine;
+
+namespace #NAMESPACE
+{
+    [CreateAssetMenu(fileName = "#SCRIPTNAME", menuName = "#PATH/Bindings/#SCRIPTNAME")]
+    public class #SCRIPTNAME : ObjectBinding
+    {
+
+        public override void Bind(IContainer container)
+        {
+
+        }
+    }
+}

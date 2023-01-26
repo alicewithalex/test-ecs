@@ -1,0 +1,16 @@
+using alicewithalex;
+using UnityEngine;
+
+namespace #NAMESPACE
+{
+    public class #SCRIPTNAME : UISystem<DefaultUIScreen>
+    {
+        protected override LayerType LayerType => LayerType.None;
+
+        public override void Run()
+        {
+            
+        }
+
+    }
+}

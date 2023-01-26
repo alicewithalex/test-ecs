@@ -1,0 +1,68 @@
+using System.Collections.Generic;
+using Leopotam.Ecs;
+using UnityEngine;
+
+namespace #NAMESPACE
+{
+    sealed class CustomEcsStartup : MonoBehaviour
+    {
+        [SerializeField] private List<Object> _systemsProviders = new List<Object>();
+
+        private EcsWorld _ecsWorld;
+        private EcsSystems _systems;
+
+        private void Start()
+        {
+            // void can be switched to IEnumerator for support coroutines.
+            _ecsWorld = new EcsWorld();
+            _systems = new EcsSystems(_ecsWorld, "EcsSystems");
+
+            #region Debuging
+#if UNITY_EDITOR
+            Leopotam.Ecs.UnityIntegration.EcsWorldObserver.Create(_ecsWorld);
+            Leopotam.Ecs.UnityIntegration.EcsSystemsObserver.Create(_systems);
+#endif
+            #endregion
+
+
+            PopulateSystems();
+            CreateSystems();
+        }
+
+        private void PopulateSystems()
+        {
+            TimeService timeService = new TimeService();
+
+            _systems.Add(new UnityTimeTracker());
+
+            _systems.Inject(timeService, typeof(TimeService));
+        }
+
+        private void CreateSystems()
+        {
+            EcsSystems endFrame = new EcsSystems(_ecsWorld, _systems.Name + " EndFrame");
+
+            foreach (var provider in _systemsProviders)
+            {
+                if (provider is not ISystemsProvider systemsProvider) continue;
+
+                _systems.Add(systemsProvider.GetSystems(_systems, endFrame, _ecsWorld));
+            }
+
+            _systems.Add(endFrame);
+            _systems.Init();
+        }
+
+        private void Update() => _systems?.Run();
+
+        private void OnDestroy()
+        {
+            if (_systems == null) return;
+
+            _systems.Destroy();
+            _systems = null;
+            _ecsWorld.Destroy();
+            _ecsWorld = null;
+        }
+    }
+}
